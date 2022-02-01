@@ -1,11 +1,6 @@
 const fs = require('fs');
-const { OutgoingMessage } = require('http');
 const TelegramBot = require('node-telegram-bot-api');
-const { getEnabledCategories } = require('trace_events');
-const { getSystemErrorName } = require('util');
-
-
-const token = '5069891936:AAHLdwN8XFWDixRefk9hQCATi-IFB3-TN1Y';
+const token = 'YOUR TOKEN';
 
 const bot = new TelegramBot(token, { polling: true });
 
@@ -43,6 +38,7 @@ const getName = (msg) => {
 
 const getUsername = (msg) => {try{
   if (!("username" in msgList)) {
+ 
     username = msg.chat.username
     msgList.username = username
     bot.sendMessage(msg.chat.id, 'you are a new user, what is your nickname?')
