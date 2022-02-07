@@ -12,6 +12,7 @@ const getAddress = (msg) => {
   if (!('address' in msgList)) {
     msgList.address = msg.text
     bot.sendMessage(msg.chat.id, `so your are ${msgList.age} years old ${msgList.callingName} living in ${msgList.address}\nThankyou`)
+    msgList = {}
     return
   }
 }
