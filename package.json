@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "newsapi": "^2.4.1",
     "node-telegram-bot-api": "^0.56.0"
+  },
+   "scripts": {
+    "start":"node app.js"
   }
 }
