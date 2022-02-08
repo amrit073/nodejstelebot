@@ -1,12 +1,12 @@
 const fs = require('fs');
+const express= require('express')
 const TelegramBot = require('node-telegram-bot-api');
 const token = '5069891936:AAHLdwN8XFWDixRefk9hQCATi-IFB3-TN1Y';
 
 const bot = new TelegramBot(token, { polling: true });
-
+app = express()
 msgList = {}
 console.log('yeta ni aayo');
-
 
 const getAddress = (msg) => {
   if (!('address' in msgList)) {
@@ -53,3 +53,9 @@ const getUsername = (msg) => {try{
 bot.on('message', (msg) => {
   getUsername(msg)
 })
+
+app.get('/', (req, res)=>{
+  res.send('okay, bot is now running')
+})
+
+app.listen(5000)
